@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Департаменты фирмы</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/departments/{id}/patch(id=${department.getId()})}" th:object="${department}">
+    <label for="name">Введите имя департамента:</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br/>
+    <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>

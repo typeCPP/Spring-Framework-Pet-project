@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Департаменты фирмы</title>
+</head>
+<body>
+<h1>Департамент</h1>
+<h4>Имя департамента:</h4>
+<p th:text="${department.getName()}"/>
+<h4>Номер департамента:</h4>
+<p th:text="${department.getId()}"/>
+
+<form th:action="@{/departments/{id}/edit(id=${department.getId()})}">
+    <input type="submit" value="Редактировать департамент"/>
+</form>
+</body>
+</html>

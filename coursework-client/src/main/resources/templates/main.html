@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+</head>
+<body>
+<h1 style="text-align: center">Бухгалтерия</h1>
+<form th:action="@{/projects/}" method="get" style="text-align: center">
+    <input type="submit" value="Проекты фирмы"/>
+</form>
+<br/>
+<form th:action="@{/departments/}" method="get" style="text-align: center">
+    <input type="submit" value="Департаменты фирмы"/>
+</form>
+<br/>
+<form th:action="@{/employees/}" method="get" style="text-align: center">
+    <input type="submit" value="Сотрудники фирмы"/>
+</form>
+<br/>
+<form th:action="@{/departments-employees/}" method="get" style="text-align: center">
+    <input type="submit" value="Сотрудники департаментов"/>
+</form>
+</body>
+</html>

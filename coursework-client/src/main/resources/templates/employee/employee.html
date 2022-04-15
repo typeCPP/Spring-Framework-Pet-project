@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники фирмы</title>
+</head>
+<body>
+<h1>Профиль сотрудника</h1>
+<h4>ФИО сотрудника:</h4>
+<p th:text="${employee.getLastName() + ' ' + employee.getFirstName() + ' ' + employee.getPatherName()}"/>
+<h4>Номер сотрудника:</h4>
+<p th:text="${employee.getId()}"/>
+<h4>Занимаемая должность:</h4>
+<p th:text="${employee.getPosition()}"/>
+<h4>Размер заработной платы:</h4>
+<p th:text="${employee.getSalary() + '$'}"/>
+
+<form th:action="@{/employees/{id}/edit(id=${employee.getId()})}">
+    <input type="submit" value="Редактировать профиль сотрудника"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Проекты фирмы</title>
+</head>
+<body>
+<h1>Проект</h1>
+<h4>Имя проекта:</h4>
+<p th:text="${project.getName()}"/>
+<h4>Номер департамента:</h4>
+<p th:text="${project.getDepartment().getId()}"/>
+<h4>Дата начала работы над проектом:</h4>
+<p th:text="${project.getDateBeg()}"/>
+<h4>Ожидаемая дата завершения проекта:</h4>
+<p th:text="${project.getDateEnd()}"/>
+<h4>Действительная дата завершения:</h4>
+<p th:text="${project.getDateEndReal()}"/>
+<form th:action="@{/projects/{id}/edit(id=${project.getId()})}">
+    <input type="submit" value="Редактировать проект"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Проекты фирмы</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/projects/{id}/patch(id=${project.getId()})}" th:object="${project}">
+    <label for="name">Введите имя проекта:</label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <br/>
+    <label for="department">Введите номер департамента:</label>
+    <input type="number" th:field="*{department.id}" id="department"/>
+    <br/>
+    <label for="dateBeg">Введите дату начала:</label>
+    <input type="text" th:field="*{dateBeg}" id="dateBeg"/>
+    <br/>
+    <label for="dateEnd">Введите ожидаемую дату завершения:</label>
+    <input type="text" th:field="*{dateEnd}" id="dateEnd"/>
+    <br/>
+    <label for="dateEndReal">Введите действительную дату завершения:</label>
+    <input type="text" th:field="*{dateEndReal}" id="dateEndReal"/>
+    <br/>
+    <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>

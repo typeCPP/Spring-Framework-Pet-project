@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Проекты фирмы</title>
+</head>
+<body>
+<h1>Проекты фирмы</h1>
+<div th:each="project : ${projects}">
+    <a th:text="${project.getName()}" th:href="@{/projects/{id}(id=${project.getId()})}"></a>
+</div>
+<form th:action="@{/projects/new}" method="get">
+    <input type="submit" value="Создать проект"/>
+</form>
+</body>
+</html>

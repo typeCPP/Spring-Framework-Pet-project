@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники фирмы</title>
+</head>
+<body>
+<form th:method="PATCH" th:action="@{/employees/{id}/patch(id=${employee.getId()})}" th:object="${employee}">
+    <label for="lastName">Введите фамилию сотрудника:</label>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
+    <br/>
+    <label for="firstName">Введите имя сотрудника:</label>
+    <input type="text" th:field="*{firstName}" id="firstName"/>
+    <br/>
+    <label for="patherName">Введите отчество сотрудника:</label>
+    <input type="text" th:field="*{patherName}" id="patherName"/>
+    <br/>
+    <label for="position">Введите должность сотрудника:</label>
+    <input type="text" th:field="*{position}" id="position"/>
+    <br/>
+    <label for="salary">Введите заработную плату сотрудника, $:</label>
+    <input type="number" th:field="*{salary}" id="salary"/>
+    <br/>
+    <input type="submit" value="Сохранить">
+</form>
+</body>
+</html>

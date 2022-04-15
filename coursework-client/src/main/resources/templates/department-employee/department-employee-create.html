@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники департаментов</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/departments-employees/create}" th:object="${departmentEmployee}">
+    <label>
+        <select th:field="*{department.id}">
+            <option th:each="dep : ${departments}" th:text="${dep.getId() + '. ' + dep.getName()}" th:value="${dep.getId()}"></option>
+        </select>
+    </label>
+    <label>
+        <select th:field="*{employee.id}">
+            <option th:each="empl : ${employees}" th:text="${empl.getId() + '. ' + empl.getLastName() + ' ' + empl.getFirstName() +' ' + empl.getPatherName()}" th:value="${empl.getId()}"></option>
+        </select>
+    </label>
+    <input type="submit" value="Создать">
+</form>
+</body>
+</html>

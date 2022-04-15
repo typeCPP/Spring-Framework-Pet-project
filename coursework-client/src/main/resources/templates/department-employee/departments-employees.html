@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники департаметов</title>
+</head>
+<body>
+<h1>Сотрудники департаментов</h1>
+<table style="border-style: hidden">
+    <tr style="border-style: solid">
+        <th style="border-style: solid">Департамент</th>
+        <th style="border-style: solid">Сотрудник</th>
+        <th style="border-style: solid">Должность</th>
+    </tr>
+    <tr th:each="departmentEmployee: ${departmentsEmployees}" style="border-style: solid">
+        <td th:text="${departmentEmployee.getDepartment().getId() + '. ' + departmentEmployee.getDepartment().getName()}" style="border-style: solid"></td>
+        <td th:text="${departmentEmployee.getEmployee().getId() + '. ' + departmentEmployee.getEmployee().getFullName()}" style="border-style: solid"></td>
+        <td th:text="${departmentEmployee.getEmployee().getPosition()}" style="border-style: solid"></td>
+        <td style="border-style: groove">
+            <form th:action="@{/departments-employees/{id}/edit(id=${departmentEmployee.getId()})}">
+                <input type="submit" value="Редактировать"/>
+            </form>
+        </td>
+    </tr>
+</table>
+<form th:action="@{/departments-employees/new}" method="get">
+    <input type="submit" value="Назначить департамент новому сотруднику"/>
+</form>
+</body>
+</html>

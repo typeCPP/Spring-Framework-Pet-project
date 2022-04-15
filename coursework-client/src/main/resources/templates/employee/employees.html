@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сотрудники фирмы</title>
+</head>
+<body>
+<h1>Сотрудники фирмы</h1>
+<div th:each="employee : ${employees}">
+    <a th:text="${employee.getLastName() + ' ' + employee.getFirstName() + ' ' + employee.getPatherName()}" th:href="@{/employees/{id}(id=${employee.getId()})}"></a>
+</div>
+<br/>
+<form th:action="@{/employees/new}" method="get">
+    <input type="submit" value="Создать профиль сотрудника"/>
+</form>
+</body>
+</html>

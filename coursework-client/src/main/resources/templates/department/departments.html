@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Департаменты фирмы</title>
+</head>
+<body>
+<h1>Департаменты фирмы</h1>
+<div th:each="department : ${departments}">
+    <a th:text="${department.getName()}" th:href="@{/departments/{id}(id=${department.getId()})}"></a>
+</div>
+<form th:action="@{/departments/new}" method="get">
+    <input type="submit" value="Создать департамент"/>
+</form>
+</body>
+</html>
